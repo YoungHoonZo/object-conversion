@@ -5,6 +5,7 @@ public class Student {
     private String gender;
     private String address;
     private String phoneNo;
+    private int age;
 
     public String getName() {
         return name;
@@ -38,6 +39,14 @@ public class Student {
         this.phoneNo = phoneNo;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     @Override
     public String toString() {
         return "Student(" +
@@ -45,6 +54,7 @@ public class Student {
                 ", gender=" + gender +
                 ", address=" + address +
                 ", phoneNo=" + phoneNo +
+                ", age=" + age +
                 ')';
     }
 }

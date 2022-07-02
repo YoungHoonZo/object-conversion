@@ -17,6 +17,7 @@ public class Main {
         student.setGender("남성");
         student.setAddress("서울");
         student.setPhoneNo("010-1111-2222");
+        student.setAge(29);
 
         Map<String, Object> convertMap = ConvertUtils.convertToMap(student);
         System.out.println("VO -> Map");
@@ -35,6 +36,7 @@ public class Main {
         student.setGender("남성");
         student.setAddress("서울");
         student.setPhoneNo("010-1111-2222");
+        student.setAge(29);
         students.add(student);
 
         student = new Student();
@@ -42,6 +44,7 @@ public class Main {
         student.setGender("남성");
         student.setAddress("서울");
         student.setPhoneNo("010-3333-4444");
+        student.setAge(29);
         students.add(student);
 
         List<Map<String, Object>> convertMaps = ConvertUtils.convertToMaps(students);

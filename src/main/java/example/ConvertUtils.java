@@ -41,7 +41,7 @@ public class ConvertUtils {
                     field.setAccessible(true);
                     String name = field.getName();
 
-                    boolean isSameType = entry.getValue().getClass().equals(field.getType());
+                    boolean isSameType = entry.getValue().getClass().equals(getReferenceType(field.getType()));
                     boolean isSameName = entry.getKey().equals(name);
 
                     if (isSameType && isSameName) {
@@ -80,5 +80,19 @@ public class ConvertUtils {
             convertList.add(ConvertUtils.convertToValueObject(map, type));
         }
         return convertList;
+    }
+
+    private static Class<?> getReferenceType(Class<?> type) {
+        switch (type.getName()) {
+            case "boolean" : return Boolean.class;
+            case "byte"    : return Byte.class;
+            case "short"   : return Short.class;
+            case "char"    : return Character.class;
+            case "int"     : return Integer.class;
+            case "long"    : return Long.class;
+            case "float"   : return Float.class;
+            case "double"  : return Double.class;
+            default        : return type;
+        }
     }
 }
