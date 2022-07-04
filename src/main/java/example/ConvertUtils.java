@@ -41,7 +41,15 @@ public class ConvertUtils {
                     field.setAccessible(true);
                     String name = field.getName();
 
-                    boolean isSameType = entry.getValue().getClass().equals(getReferenceType(field.getType()));
+                    boolean isSameType = false;
+
+                    if (entry.getValue() == null){
+                        isSameType = true;
+                    }
+                    else {
+                        isSameType = entry.getValue().getClass().equals(getReferenceType(field.getType()));
+                    }
+
                     boolean isSameName = entry.getKey().equals(name);
 
                     if (isSameType && isSameName) {
